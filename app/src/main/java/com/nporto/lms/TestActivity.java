@@ -4,19 +4,20 @@ package com.nporto.lms;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.nporto.lms.data.chapters;
+import com.nporto.lms.model.Chapter;
 import com.nporto.lms.model.Question;
 import com.nporto.lms.model.Score;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class TestActivity extends AppCompatActivity implements View.OnClickListener {
@@ -26,14 +27,15 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     private int chapterIndex;
     private String chapterTitle;
-    private Question question = new Question();
+    private Question question;
 
     private String answer;
-    private int questionLength = question.questions.length;
+    private int questionLength;
 
     private int QuestionSet = 4;
     private int QuestionCounter = 0;
     private int CorrentAnswersCounter = 0;
+    private Chapter chapterData;
 
     Random random;
 
@@ -52,16 +54,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         TextView ViewChapter = (TextView) findViewById(R.id.toolbar_title);
 
 
-
-
-        if(extras!=null)
-        {
-//            data
-            chapterIndex = extras.getInt("chapter");
-            chapterTitle = extras.getString("chapterTitle");
-            ViewChapter.setText(chapterTitle);
-        }
-
+        chapters data = new chapters();
+        ArrayList<Chapter> chaptersList = data.getData();
         random = new Random();
 
 
@@ -74,10 +68,26 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         btn_three.setOnClickListener(this);
         btn_four = (Button)findViewById(R.id.btn_four);
         btn_four.setOnClickListener(this);
-
         tv_question = (TextView)findViewById(R.id.tv_question);
 
-        NextQuestion(random.nextInt(questionLength));
+        if(extras!=null)
+        {
+//            data
+            chapterIndex = extras.getInt("chapter");
+            chapterTitle = extras.getString("chapterTitle");
+            ViewChapter.setText(chapterTitle);
+
+//            init question data
+            chapterData = chaptersList.get(chapterIndex);
+            question = new Question(chapterData);
+            questionLength = question.total();
+
+//            trigger first question
+            NextQuestion(random.nextInt(questionLength));
+        }
+
+
+
     }
 
     @Override
@@ -176,6 +186,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void NextQuestion(int num){
+//        Log.d("NextQuestion",String.valueOf(num));
+//        Log.d("NextQuestion", Arrays.toString(question.getQuestions()));
         tv_question.setText(question.getQuestion(num));
         btn_one.setText(question.getchoice1(num));
         btn_two.setText(question.getchoice2(num));

@@ -44,21 +44,21 @@ public class chapters {
         int paragraphContent = R.array.chapter1_paragraphs;
 
         String questions[] = {
-                "Which is a Programming Language?",
-                "In COMAL language program, after name of procedure parameters must be in?",
-                "Programming language COBOL works best for use in?"
+                "Πότε ξεκίνησε η Αναγέννηση?",
+                "Πότε ξεκίνησε η  Γαλλική Επανάσταση?",
+                "Τι ανακάλυψε ο Χριστόφορος Κολόμβος?"
         };
 
         String choices[][] = {
-                {"HTML", "CSS", "Vala", "PHP"},
-                {"Punction Marks", "Back-Slash", "Brackets", "Semi Colon"},
-                {"Siemens Applications", "Student Applications", "Social Applications", "Commercial Applications"}
+                {"12ο αιώνα", "13ό αιώνα", "14ο αιώνα", "15ο αιώνα"},
+                {"1776", "1789", "1798", "1821"},
+                {"Το ακρωτήριο της Καλής Ελπίδας", "Την Ινδία", "Την Αμερική", "Η γη είναι σφαιρική"}
         };
 
         String correctAnswer[] = {
-                "PHP",
-                "Brackets",
-                "Commercial Applications"
+                "14ο αιώνα",
+                "1789",
+                "Την Αμερική"
         };
 
 
@@ -78,22 +78,23 @@ public class chapters {
         int paragraphContent = R.array.chapter2_paragraphs;
 
         String questions[] = {
-                "Which is a Programming Language?",
-                "In COMAL language program, after name of procedure parameters must be in?",
-                "Programming language COBOL works best for use in?"
+                "Ποιος έγραψε την Ελληνική Νομαρχία?",
+                "Πότε έγινε η πρώτη εγκατάλειψη του Σουλίου?",
+                "Πότε υπογράφτηκε η συνθήκη του Κιουτσούκ Καιναρτζή?"
         };
 
         String choices[][] = {
-                {"HTML", "CSS", "Vala", "PHP"},
-                {"Punction Marks", "Back-Slash", "Brackets", "Semi Colon"},
-                {"Siemens Applications", "Student Applications", "Social Applications", "Commercial Applications"}
+                {"Κοσμάς ο Αιτωλός", "Ρήγας Βελεστινλής", "Ευγένιος Βούλγαρης", "Δμήτριος Καταρτζής"},
+                {"1774", "1789", "1803", "1821"},
+                {"1774", "1789", "1803", "1821"}
         };
 
         String correctAnswer[] = {
-                "PHP",
-                "Brackets",
-                "Commercial Applications"
+            "Ρήγας Βελεστινλής",
+                    "1803",
+                    "1774"
         };
+
 
 
         return new Chapter(name,paragraphs,paragraphContent, questions,choices,correctAnswer);
@@ -109,23 +110,25 @@ public class chapters {
                 "4. Η επανάσταση στη Στερεά Ελλάδα"
         };
         int paragraphContent = R.array.chapter3_paragraphs;
+
         String questions[] = {
-                "Which is a Programming Language?",
-                "In COMAL language program, after name of procedure parameters must be in?",
-                "Programming language COBOL works best for use in?"
+                "Ποιον μήνα έγινε η Άλωση της Τριπολιτσάς το 1821?",
+                "Η επανάσταση ξεκίνησε πρώτα από ?",
+                "Τον Μάρτιο του 1821 ξεκίνησε η Ελληνική Επανάσταση από?"
         };
 
         String choices[][] = {
-                {"HTML", "CSS", "Vala", "PHP"},
-                {"Punction Marks", "Back-Slash", "Brackets", "Semi Colon"},
-                {"Siemens Applications", "Student Applications", "Social Applications", "Commercial Applications"}
+                {"Αύγουστο", "Σεπτέμβριο", "Ιούνιο ", "Ιούλιο"},
+                {"Το Βουκουρέστι", "Την Αλαμάνα", "Την Τριπολιτσά", "Τις παραδουνάβιες ηγεμονίες"},
+                {"Το Άγιο Όρος", "Το Σούλι", "Την Στερεά Ελλάδα ", "Την Πελοπόννησο"}
         };
 
         String correctAnswer[] = {
-                "PHP",
-                "Brackets",
-                "Commercial Applications"
+                "Σεπτέμβριο",
+                "Τις παραδουνάβιες ηγεμονίες",
+                "Την Πελοπόννησο"
         };
+
 
 
         return new Chapter(name,paragraphs,paragraphContent, questions,choices,correctAnswer);

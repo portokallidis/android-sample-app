@@ -3,23 +3,23 @@ package com.nporto.lms.model;
 
 public class Question {
 
-    public String questions[] = {
-            "Which is a Programming Language?",
-            "In COMAL language program, after name of procedure parameters must be in?",
-            "Programming language COBOL works best for use in?"
-    };
+    private String[] questions;
+    private String[][] choices;
+    private String[] correctAnswer;
 
-    public String choices[][] = {
-            {"HTML", "CSS", "Vala", "PHP"},
-            {"Punction Marks", "Back-Slash", "Brackets", "Semi Colon"},
-            {"Siemens Applications", "Student Applications", "Social Applications", "Commercial Applications"}
-    };
+    public Question(Chapter ch){
+        this.questions = ch.questions;
+        this.choices = ch.choices;
+        this.correctAnswer = ch.correctAnswer;
 
-    public String correctAnswer[] = {
-            "PHP",
-            "Brackets",
-            "Commercial Applications"
-    };
+    }
+
+    public int total(){
+        return questions.length;
+    }
+    public String[] getQuestions(){
+        return questions;
+    }
 
     public String getQuestion(int a){
         String question = questions[a];

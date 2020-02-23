@@ -49,9 +49,9 @@ public class ScoreFragment extends Fragment {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(root.getContext());
                 final AlertDialog.Builder builder = alertDialogBuilder
                         .setTitle("Επαναφορα High Score")
-                        .setMessage("Θελετε να διαγράψετε το high score για το κεφάλαιο \n<< " + selectedChapter + " >>;")
+                        .setMessage("Θελετε να διαγράψετε το high score για το κεφάλαιο \n\"" + selectedChapter + "\" ;")
                         .setCancelable(false)
-                        .setPositiveButton("Διαγραφή score", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("Διαγραφη score", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 // Handle highscore
