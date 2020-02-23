@@ -1,13 +1,13 @@
 package com.nporto.lms.model;
 
 
-public class Question {
+public class QuestionSet {
 
     private String[] questions;
     private String[][] choices;
     private String[] correctAnswer;
 
-    public Question(Chapter ch){
+    public QuestionSet(Chapter ch){
         this.questions = ch.questions;
         this.choices = ch.choices;
         this.correctAnswer = ch.correctAnswer;

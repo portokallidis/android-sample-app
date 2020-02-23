@@ -14,7 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.nporto.lms.data.chapters;
 import com.nporto.lms.model.Chapter;
-import com.nporto.lms.model.Question;
+import com.nporto.lms.model.QuestionSet;
 import com.nporto.lms.model.Score;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     private int chapterIndex;
     private String chapterTitle;
-    private Question question;
+    private com.nporto.lms.model.QuestionSet questionSet;
 
     private String answer;
     private int questionLength;
@@ -77,12 +77,12 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             chapterTitle = extras.getString("chapterTitle");
             ViewChapter.setText(chapterTitle);
 
-//            init question data
+//            init questionSet data
             chapterData = chaptersList.get(chapterIndex);
-            question = new Question(chapterData);
-            questionLength = question.total();
+            questionSet = new QuestionSet(chapterData);
+            questionLength = questionSet.total();
 
-//            trigger first question
+//            trigger first questionSet
             NextQuestion(random.nextInt(questionLength));
         }
 
@@ -187,14 +187,14 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     private void NextQuestion(int num){
 //        Log.d("NextQuestion",String.valueOf(num));
-//        Log.d("NextQuestion", Arrays.toString(question.getQuestions()));
-        tv_question.setText(question.getQuestion(num));
-        btn_one.setText(question.getchoice1(num));
-        btn_two.setText(question.getchoice2(num));
-        btn_three.setText(question.getchoice3(num));
-        btn_four.setText(question.getchoice4(num));
+//        Log.d("NextQuestion", Arrays.toString(questionSet.getQuestions()));
+        tv_question.setText(questionSet.getQuestion(num));
+        btn_one.setText(questionSet.getchoice1(num));
+        btn_two.setText(questionSet.getchoice2(num));
+        btn_three.setText(questionSet.getchoice3(num));
+        btn_four.setText(questionSet.getchoice4(num));
 
-        answer = question.getCorrectAnswer(num);
+        answer = questionSet.getCorrectAnswer(num);
         QuestionCounter++;
     }
 
