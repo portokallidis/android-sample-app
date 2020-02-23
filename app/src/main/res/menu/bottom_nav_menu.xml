@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_theory"
+        android:icon="@drawable/ic_import_contacts_black_24dp"
+        android:title="@string/theory_title" />
+
+    <item
+        android:id="@+id/navigation_questions"
+        android:icon="@drawable/ic_list_black_24dp"
+        android:title="@string/questions_title" />
+
+    <item
+        android:id="@+id/navigation_score"
+        android:icon="@drawable/ic_chrome_reader_mode_black_24dp"
+        android:title="@string/score_title" />
+
+</menu>
