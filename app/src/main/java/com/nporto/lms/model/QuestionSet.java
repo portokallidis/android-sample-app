@@ -26,24 +26,11 @@ public class QuestionSet {
         return question;
     }
 
-    public String getchoice1(int a){
-        String choice = choices[a][0];
-        return choice;
+    public String getChoice(int a,int choice){
+        return choices[a][choice];
     }
-
-    public String getchoice2(int a){
-        String choice = choices[a][1];
-        return choice;
-    }
-
-    public String getchoice3(int a){
-        String choice = choices[a][2];
-        return choice;
-    }
-
-    public String getchoice4(int a){
-        String choice = choices[a][3];
-        return choice;
+    public int totalChoices(int a){
+        return choices[a].length;
     }
 
     public String getCorrectAnswer(int a){
