@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -47,6 +48,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("Test","Created New");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_activity);
 
@@ -150,9 +152,14 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 //                Log.d("Answer",ans);
 //                Log.d("CorrectAnswer",answer);
                 if (ans.length()>0) {
+
                     if (ans.contains(answer)) {
                         CorrectAnswer();
                     } else WrongAnswer();
+
+//                    hide keyboard
+                    InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(),0);
                 }
                 break;
         }
@@ -262,7 +269,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             String choice;
             for (int i=0;i<totalChoices;i++){
                 choice = questionSet.getChoice(num,i);
-                Log.d("Test",choice);
+//                Log.d("Test",choice);
                 if(choice!=null) {
                     switch (i){
                         case 0:
