@@ -149,9 +149,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 String ans = answer_input.getText().toString().toLowerCase();
 //                Log.d("Answer",ans);
 //                Log.d("CorrectAnswer",answer);
-                if(ans.contains(answer)) {
-                    CorrectAnswer();
-                } else WrongAnswer();
+                if (ans.length()>0) {
+                    if (ans.contains(answer)) {
+                        CorrectAnswer();
+                    } else WrongAnswer();
+                }
                 break;
         }
     }

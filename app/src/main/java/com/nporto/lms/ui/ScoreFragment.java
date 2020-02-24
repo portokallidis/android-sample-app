@@ -1,7 +1,6 @@
 package com.nporto.lms.ui;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.nporto.lms.R;
-import com.nporto.lms.TestActivity;
 import com.nporto.lms.data.chapters;
 import com.nporto.lms.model.Score;
 
@@ -39,9 +37,9 @@ public class ScoreFragment extends Fragment {
         final ListView listView = (ListView) root.findViewById(R.id.chapters_score);
 
         // Set an item click listener for ListView
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
                 // Get the selected item text from ListView
                 String selectedChapter = (String) parent.getItemAtPosition(position);
 
@@ -69,6 +67,7 @@ public class ScoreFragment extends Fragment {
                             }
                         });
                 alertDialogBuilder.show();
+                return false;
             }
         });
 
