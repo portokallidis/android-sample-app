@@ -149,11 +149,12 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btn_submit:
                 String ans = answer_input.getText().toString().toLowerCase();
-//                Log.d("Answer",ans);
-//                Log.d("CorrectAnswer",answer);
+                String correct_answer = answer.toString().toLowerCase();
+                Log.d("Answer",ans);
+                Log.d("CorrectAnswer",correct_answer);
                 if (ans.length()>0) {
 
-                    if (ans.contains(answer)) {
+                    if (ans.contains(correct_answer)) {
                         CorrectAnswer();
                     } else WrongAnswer();
 
@@ -254,6 +255,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
             btn_submit.setVisibility(View.VISIBLE);
             answer_input.setVisibility(View.VISIBLE);
+            answer_input.setText("");
 
         } else {
 //            hide the free-form field
